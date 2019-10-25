@@ -1,0 +1,61 @@
+/* 
+    Inserts additional styles to the grid system
+    for demonstration purposes only
+*/
+
+.grid {
+  background-color: black;
+}
+
+.row {
+  text-align: center;
+}
+
+.col-1 {
+  background-color: lightgray;
+}
+
+.col-2 {
+  background-color: lightgray;
+}
+
+.col-3 {
+  background-color: lightgray;
+}
+
+.col-4 {
+  background-color: lightgray;
+}
+
+.col-5 {
+  background-color: lightgray;
+}
+
+.col-6 {
+  border: 1px solid black;
+  background-color: lightgray;
+}
+
+.col-7 {
+  background-color: lightsalmon;
+}
+
+.col-8 {
+  background-color: lightsalmon;
+}
+
+.col-9 {
+  background-color: lightsalmon;
+}
+
+.col-10 {
+  background-color: lightsalmon;
+}
+
+.col-11 {
+  background-color: lightsalmon;
+}
+
+.col-12 {
+  background-color: lightsalmon;
+}

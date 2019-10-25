@@ -1,0 +1,63 @@
+/*
+ * Main Styles
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+main {  
+  /* We put "main" as 100% so
+   * when the user clicks anywhere
+   * on the page, the menu closes
+   */
+  height: 100%;
+}
+
+body {
+  background-color: lightblue;
+}
+
+.page-content {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5em;
+}
+
+.menu-btn:visited {
+  text-decoration: none;
+  color: black;
+}
+
+/*
+ * Menu
+ */
+
+nav {
+  background-color: darkblue;
+  color: white;
+  padding: 0.5em;
+
+  height: 100%;
+  width: 300px;
+  margin: 0;
+
+  /* We set the side menu normal position initially */
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  /* Here we hide the side menu by positioning it off canvas */
+  -webkit-transform: translate(-308px, 0);
+  transform: translate(-300px, 0);
+  transition: transform 0.3s ease;
+}
+
+/* By assigning an 'open' class we bring it into canvas */
+nav.open {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
