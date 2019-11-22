@@ -1,6 +1,65 @@
 # What NEW I learned today
 
+## 22/11/2019 - Netlify, create-react-app, staging
+
+### process.env.NODE_ENV
+
+In your React app you can have the ENVIRONMENT by reading the `process.env.NODE_ENV` variable.
+* `yarn start` => `development` 
+* `yarn test` => `test`
+* `yarn build` => `production`
+
+The NODE_ENV cannot be overriden. It is set by create-react-app build scripts
+
+### process.env.REACT_APP_xxxx
+
+Custom environmental variables must start with `REACT_APP_` prefix, otherwise they will not be injected.
+
+### Netlify Deployments on branch
+
+Netlify by default builds 'production' deployment with the `master` branch.
+
+You can enable automatic deployments of other branches by configuring:
+
+![](./images/netlify-branch-build.png)
+
+By default the `yarn build` will set the NODE_ENV, as explained above.
+
+This will auto-deploy changes to branches.
+
+### Netlify Environmental variables per branch
+
+You can setup Netlify build jobs to set different environmental variables per deploy job.
+You can have a `netlify.toml` file in root directory of your git repo.
+
+example `netlify.toml`:
+
+```
+[context.development.environment]
+    REACT_APP_STAGE = "development"
+
+[context.staging.environment]
+    REACT_APP_STAGE = "staging"
+
+[context.production.environment]
+    REACT_APP_STAGE = "production"
+```
+
+[https://killerchip-react-playground.netlify.com/](https://killerchip-react-playground.netlify.com/)
+
+Inside react read as `process.env.REACT_APP_STAGE`
+
+======
+
+
+## Redux persist
+
+A guide how to use it
+[https://blog.reactnativecoach.com/the-definitive-guide-to-redux-persist-84738167975](https://blog.reactnativecoach.com/the-definitive-guide-to-redux-persist-84738167975)
+
 ... on my software development adventures
+
+and how to use whitelist/blacklist (see example `./dev/3musk/cmv/playground`)
 
 ## Sept 20 2019
 
