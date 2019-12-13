@@ -1,0 +1,12 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.App {
+  text-align: center;
+  max-width: 920px;
+  margin: auto;
+}

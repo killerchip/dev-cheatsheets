@@ -1,0 +1,36 @@
+.Post {
+    text-align: left;
+}
+
+.Post h4,
+.Post h6 {
+    margin: 0;
+}
+
+.post-date {
+    text-align: right;
+    font-style: italic;
+    font-weight: 100 !important;
+}
+
+.post-date p {
+    margin: 0;
+}
+
+.post-text {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.post-buttons-container {
+    text-align: right;
+}
+
+.post-buttons-container button {
+    margin: 0 4px;
+}
+
+.button-danger {
+    background: rgb(202, 60, 60);
+    color: white;
+}

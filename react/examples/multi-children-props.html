@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+      .paper-page {
+        display: flex;
+      }
+      .column {
+        padding: 1em;
+      }
+      .column-left {
+        width: 25%;
+      }
+      .column-right {
+        width: 25%;
+      }
+      .colimn-middle {
+        width: 50%;
+        border: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      class PaperPage extends React.Component {
+        render(){
+          return (
+            <div className="paper-page">
+              <div className="column column-left">
+                {this.props.columnLeft}
+              </div>
+              <div className="column column-middle">
+                  {this.props.columnMiddle}
+              </div>
+              <div className="column column-right">
+                  {this.props.columnRight}
+              </div>
+            </div>
+          );
+        }
+      }
+
+      class NewsPaperPage extends React.Component {
+        render() {
+          const columnLeft = (
+            <div>
+              <h2>Contents</h2>
+              <ul>
+                <li>Latest News</li>
+                <li>Finacial World</li>
+                <li>All about Sports</li>
+              </ul>            
+            </div>
+          );
+
+          const columnMiddle = (
+            <div>
+              <h1>Breaking News</h1>
+              <strong>You won't believe what is happening</strong>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultrices quam arcu, ac finibus massa sollicitudin eu. Ut nisl sem, dapibus vel enim posuere, interdum vestibulum mauris. Duis faucibus sagittis ante sodales ornare. Curabitur in rutrum velit, eu sagittis mi. Maecenas ac condimentum arcu, nec imperdiet tellus. Nulla gravida, enim ac tristique sagittis, odio purus lacinia quam, in aliquet lorem mauris non purus. Duis fringilla felis rutrum eros rutrum, ac interdum velit accumsan. Etiam porttitor sodales mauris et aliquam. Aliquam a magna eget risus cursus tincidunt eget a massa. Donec non ex sed quam tristique viverra non vel enim. Curabitur posuere tincidunt ligula quis scelerisque. Duis mollis ex ultricies erat pellentesque commodo. Vivamus finibus ultricies erat, ac iaculis metus venenatis et.</p>
+            </div>
+          );
+
+          const columnRight = (
+            <div>
+              <h2>Weather forecast</h2>
+              <p>Good weather today, but windy.</p>
+            </div>
+          );
+
+          return (
+            <PaperPage
+              columnLeft={columnLeft}
+              columnMiddle={columnMiddle}
+              columnRight={columnRight}
+            />
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <NewsPaperPage />,
+        document.getElementById('root')
+      );
+
+    </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      To set up a production-ready React build environment, follow these instructions:
+      * https://reactjs.org/docs/add-react-to-a-new-app.html
+      * https://reactjs.org/docs/add-react-to-an-existing-app.html
+
+      You can also use React without JSX, in which case you can remove Babel:
+      * https://reactjs.org/docs/react-without-jsx.html
+      * https://reactjs.org/docs/cdn-links.html
+    -->
+  </body>
+</html>

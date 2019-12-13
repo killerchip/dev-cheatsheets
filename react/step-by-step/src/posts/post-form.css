@@ -1,0 +1,24 @@
+.PostForm {
+    text-align: left;
+}
+
+.PostForm input,
+.PostForm select {
+    width: 100%;
+}
+
+.form-field-column {
+    padding: 4px;
+}
+
+.post-text-area {
+    width: 100%;
+}
+
+.form-buttons-container {
+    text-align: right;
+}
+
+.form-buttons-container button {
+    margin: 0 4px;
+}

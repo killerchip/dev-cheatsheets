@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Local State</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      class TimeCounter extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { 
+            counter: 0,
+            date: new Date()
+          };
+          setInterval(
+            ()=>{
+              this.incCounter();
+            },
+            1000
+          );
+        }
+
+        incCounter() {
+          this.setState({date: new Date()});
+          this.setState(
+            (prevState, props) => ({counter: prevState.counter + props.incValue})
+          );
+        }
+
+        render() {
+          return (
+            <div>
+              <h1>Counting: {this.state.counter}</h1>
+              <p>{this.state.date.toLocaleTimeString()}</p>
+            </div>  
+          );
+        }
+
+      }
+
+      ReactDOM.render(
+        <TimeCounter incValue={1} />,
+        document.getElementById('root')
+      );
+
+    </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      To set up a production-ready React build environment, follow these instructions:
+      * https://reactjs.org/docs/add-react-to-a-new-app.html
+      * https://reactjs.org/docs/add-react-to-an-existing-app.html
+
+      You can also use React without JSX, in which case you can remove Babel:
+      * https://reactjs.org/docs/react-without-jsx.html
+      * https://reactjs.org/docs/cdn-links.html
+    -->
+  </body>
+</html>
