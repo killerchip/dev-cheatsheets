@@ -76,10 +76,4 @@ _[home.html](./home.html)_
 </html>
 ```
 
-## Project contents
-
-**[grid.css](./my-fmw/grid.css)** - The actual grid system file
-
-**[home.html](./home.html)** - A page demonstrating how to use the grid system
-
-**[grid-test.css](./grid-test.css)** - Additional styles to visual the grid system demonstration
+> See it in action at [CodeSandbox](https://codesandbox.io/s/a-minimum-grid-system-58vg8)
